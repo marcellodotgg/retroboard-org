@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
 import { BoardService } from '../../../../services/board.service';
+import { ColumnService } from '../../../../services/column.service';
 import { ColumnComponent } from '../column/column.component';
 
 @Component({
@@ -14,5 +15,12 @@ import { ColumnComponent } from '../column/column.component';
 export class BoardComponent {
   board = computed(() => this.boardService.board()!);
 
-  constructor(private readonly boardService: BoardService) {}
+  constructor(
+    private readonly boardService: BoardService,
+    private readonly columnService: ColumnService,
+  ) {}
+
+  addNewColumn(): void {
+    this.columnService.create().subscribe();
+  }
 }

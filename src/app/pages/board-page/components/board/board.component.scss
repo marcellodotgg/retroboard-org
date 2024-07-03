@@ -1,3 +1,12 @@
 :host {
   @apply flex grow h-full;
 }
+
+button.add-column {
+  @apply w-[224px] border-dashed border-2 rounded-2xl p-4;
+  @apply transition-colors duration-200 text-gray-500 font-semibold;
+
+  &:hover {
+    @apply border-gray-500 text-gray-800;
+  }
+}

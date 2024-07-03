@@ -4,5 +4,14 @@
     @for (column of board().columns; track column.id) {
       <app-column [column]="column" />
     }
+    <div>
+      <button
+        class="add-column"
+        aria-label="add new column"
+        (click)="addNewColumn()"
+      >
+        + New Column
+      </button>
+    </div>
   </div>
 </article>

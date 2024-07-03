@@ -17,7 +17,10 @@ import { BoardComponent } from './components/board/board.component';
 })
 export class BoardPageComponent {
   loading = computed(() => !this.board());
-  board = computed(() => this.boardService.board());
+  board = computed(() => {
+    const board = this.boardService.board();
+    return board?.columns?.sort((a, b) => a.display_order - b.display_order);
+  });
 
   constructor(
     private readonly title: Title,
