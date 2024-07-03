@@ -5,7 +5,8 @@
 html,
 body,
 app-root {
-  @apply m-0 p-0 min-h-screen flex flex-col;
+  @apply m-0 p-0 flex flex-col;
+  min-height: 100lvh;
 }
 
 main {
