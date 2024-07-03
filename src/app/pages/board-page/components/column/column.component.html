@@ -1,10 +1,12 @@
 <section class="flex items-center justify-between border-b py-2 px-3">
-  <h1 class="text-lg">{{ column().name }}</h1>
+  <h1 class="text-base">
+    {{ column().name }} <span>{{ column().feedback?.length ?? 0 }}</span>
+  </h1>
   <button
-    class="text-sm text-blue-700 underline"
+    class="text-sm text-blue-700 underline shrink-0"
     (click)="openAddFeedbackDialog()"
   >
-    Add
+    + Add
   </button>
 </section>
 <div class="flex flex-col gap-3 p-3 h-full overflow-y-auto">

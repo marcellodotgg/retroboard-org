@@ -27,6 +27,7 @@ $retroboard-org-theme: mat.define-theme(
 // that you are using.
 :root {
   @include mat.all-component-themes($retroboard-org-theme);
+  --mdc-dialog-container-color: #fff;
 }
 
 // Comment out the line below if you want to use the pre-defined typography utility classes.
@@ -60,22 +61,43 @@ footer {
     @apply font-extrabold text-xl;
   }
 
+  h2 {
+    @apply font-bold text-lg;
+  }
+
   input,
   textarea {
-    @apply outline-none;
+    @apply outline-none w-full;
   }
 
   textarea {
     @apply rounded-2xl p-3;
-    @apply w-full border border-gray-300 focus:border-blue-900;
+    @apply border border-gray-300 focus:border-blue-900;
   }
 }
 
-html,
-body {
-  height: 100%;
+.mat-mdc-dialog-container {
+  @apply w-full md:w-[500px];
 }
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+.mat-mdc-dialog-component-host:first-child {
+  @apply flex flex-col gap-4 p-5;
+
+  button {
+    @apply rounded-2xl py-1.5 px-3;
+    @apply transition-colors duration-200;
+
+    &.cancel {
+      @apply bg-white;
+
+      &:hover {
+        @apply bg-gray-100;
+      }
+    }
+
+    &[type="submit"] {
+      @apply bg-blue-900 text-white hover:bg-blue-950;
+      @apply disabled:bg-gray-200 disabled:text-gray-700 disabled:cursor-not-allowed;
+    }
+  }
 }

@@ -1,0 +1,39 @@
+<section>
+  <h1>Board Settings</h1>
+  <div class="text-sm text-gray-600">
+    Only the person who created this board will be able to access these
+    settings.
+  </div>
+</section>
+<form [formGroup]="form">
+  <input formControlName="name" type="text" />
+</form>
+<section class="flex justify-start flex-row-reverse gap-2">
+  <button
+    type="submit"
+    [disabled]="form.invalid || form.disabled || form.pristine"
+    (click)="update()"
+  >
+    Update
+  </button>
+  <button mat-dialog-close class="cancel">Cancel</button>
+</section>
+
+<hr />
+<section class="flex flex-col gap-2 bg-red-50 rounded-2xl p-3">
+  <div>
+    <h2 class="text-red-900">Delete Board</h2>
+    <div class="text-sm text-gray-600">
+      This is a permanent action and you will lose all data associated with this
+      board. This includes, columns, feedback, etc.
+    </div>
+  </div>
+  <div>
+    <button
+      class="bg-red-600 hover:bg-red-700 text-white text-sm"
+      (click)="deleteBoard()"
+    >
+      Delete Board Permanently
+    </button>
+  </div>
+</section>

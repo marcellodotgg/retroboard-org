@@ -1,17 +1,22 @@
 <article class="container flex flex-col gap-2 w-full pt-2">
-  <h1 class="text-2xl">{{ board().name }}</h1>
+  <h1 class="text-xl">
+    {{ board().name }}
+    <button class="text-sm" (click)="openBoardSettings()">Open Settings</button>
+  </h1>
   <div class="flex gap-6 h-full overflow-x-auto w-full pb-4">
     @for (column of board().columns; track column.id) {
       <app-column [column]="column" />
     }
-    <div>
-      <button
-        class="add-column"
-        aria-label="add new column"
-        (click)="addNewColumn()"
-      >
-        + New Column
-      </button>
-    </div>
+    @if (isOwner()) {
+      <div>
+        <button
+          class="add-column"
+          aria-label="add new column"
+          (click)="addNewColumn()"
+        >
+          + New Column
+        </button>
+      </div>
+    }
   </div>
 </article>
