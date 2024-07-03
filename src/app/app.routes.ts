@@ -12,4 +12,8 @@ export const routes: Routes = [
     path: 'boards/:id',
     component: BoardPageComponent,
   },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
