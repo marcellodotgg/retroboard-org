@@ -1,7 +1,11 @@
 <article class="container flex flex-col gap-2 w-full pt-2">
   <h1 class="text-xl">
     {{ board().name }}
-    <button class="text-sm" (click)="openBoardSettings()">Open Settings</button>
+    @if (isOwner()) {
+      <button class="text-sm" (click)="openBoardSettings()">
+        Open Settings
+      </button>
+    }
   </h1>
   <div class="flex gap-6 h-full overflow-x-auto w-full pb-4">
     @for (column of board().columns; track column.id) {
