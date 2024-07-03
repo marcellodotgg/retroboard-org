@@ -1,6 +1,19 @@
-<h1>{{ column().name }}</h1>
-<div>
+<section class="flex items-center justify-between border-b py-2 px-3">
+  <h1 class="text-lg">{{ column().name }}</h1>
+  <button
+    class="text-sm text-blue-700 underline"
+    (click)="openAddFeedbackDialog()"
+  >
+    Add
+  </button>
+</section>
+<div class="flex flex-col gap-3 p-3 h-full overflow-y-auto">
   @for (feedback of column().feedback; track feedback.id) {
-    {{ feedback.description }}
+    <div class="rounded-2xl bg-gray-100 border p-3">
+      {{ feedback.description }}
+    </div>
   }
+</div>
+<div class="border-t bg-gray-100 text-xs px-3 py-2 rounded-b-2xl">
+  Total Feedback: {{ column().feedback?.length ?? 0 }}
 </div>

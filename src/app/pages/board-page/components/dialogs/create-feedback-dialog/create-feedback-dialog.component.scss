@@ -1,0 +1,30 @@
+:host {
+  @apply flex flex-col gap-4 p-5 md:w-[500px];
+}
+
+form {
+  @apply w-full;
+
+  textarea {
+    min-height: 156px;
+    max-height: 448px;
+  }
+}
+
+button {
+  @apply rounded-2xl py-1.5 px-3;
+  @apply transition-colors duration-200;
+
+  &.cancel {
+    @apply bg-white;
+
+    &:hover {
+      @apply bg-gray-100;
+    }
+  }
+
+  &[type="submit"] {
+    @apply bg-blue-900 text-white hover:bg-blue-950;
+    @apply disabled:bg-gray-200 disabled:text-gray-700 disabled:cursor-not-allowed;
+  }
+}

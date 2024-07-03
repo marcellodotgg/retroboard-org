@@ -1,0 +1,23 @@
+<section>
+  <h1>Add Feedback</h1>
+  <div class="text-sm text-gray-600">
+    Please keep it respectful. Anyone with the link to this board will be able
+    to view this.
+  </div>
+</section>
+<form [formGroup]="form">
+  <textarea
+    formControlName="description"
+    placeholder="Start typing your feedback..."
+  ></textarea>
+</form>
+<section class="flex justify-start flex-row-reverse gap-2">
+  <button
+    type="submit"
+    [disabled]="form.invalid || form.disabled"
+    (click)="createFeedback()"
+  >
+    Submit
+  </button>
+  <button mat-dialog-close class="cancel">Cancel</button>
+</section>
