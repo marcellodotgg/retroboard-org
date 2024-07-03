@@ -1,13 +1,13 @@
 {
-  "name": "ngx-template",
-  "version": "18.0.0",
+  "name": "retroboard-org",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:ngx-template": "node dist/ngx-template/server/server.mjs",
+    "serve:ssr:retroboard-org": "node dist/retroboard-org/server/server.mjs",
     "prepare": "husky"
   },
   "lint-staged": {

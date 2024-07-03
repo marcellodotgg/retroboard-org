@@ -1,10 +1,10 @@
-# ngx-template
+# retroboard-org
 
 Latest Version of Angular Template to get you started. Contains TailwindCSS, GHPages Deployment via Actions, Husky, and Prettier.
 
 # Getting Started
 
-Replace all instances of `ngx-template` with your project name. This includes the workflows, package.json, etc.
+Replace all instances of `retroboard-org` with your project name. This includes the workflows, package.json, etc.
 
 ## Versioning
 

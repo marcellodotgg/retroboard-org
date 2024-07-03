@@ -24,13 +24,13 @@ jobs:
           npm run build
 
       - name: Create 404.html file
-        run: cp ./dist/ngx-template/browser/index.html ./dist/ngx-template/browser/404.html
+        run: cp ./dist/retroboard-org/browser/index.html ./dist/retroboard-org/browser/404.html
 
       - name: Create CNAME file
-        run: echo 'retroboard.org' > ./dist/ngx-template/browser/CNAME
+        run: echo 'retroboard.org' > ./dist/retroboard-org/browser/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/ngx-template/browser
+          publish_dir: ./dist/retroboard-org/browser
