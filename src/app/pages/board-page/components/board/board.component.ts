@@ -33,6 +33,6 @@ export class BoardComponent {
   }
 
   openBoardSettings(): void {
-    this.dialog.open(BoardSettingsDialogComponent, { data: this.board() });
+    this.dialog.open(BoardSettingsDialogComponent, { data: this.board(), autoFocus: false });
   }
 }
