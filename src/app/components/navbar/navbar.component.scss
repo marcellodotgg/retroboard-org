@@ -1,6 +1,6 @@
 :host {
   @apply fixed top-0 w-full z-40 h-12;
-  @apply border-b;
+  @apply border-b bg-white;
 
   .container {
     @apply flex items-center h-full;

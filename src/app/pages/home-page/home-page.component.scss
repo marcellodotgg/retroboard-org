@@ -1,8 +1,9 @@
 :host {
-  @apply flex-grow h-0;
+  @apply flex flex-col flex-grow;
 
   .container {
-    @apply flex flex-col items-start mt-4 sm:mt-0 sm:justify-center sm:items-center h-full;
+    @apply flex flex-col items-start mt-4 sm:mt-0 sm:justify-center;
+    @apply sm:items-center flex-grow h-full;
   }
 
   .card {
