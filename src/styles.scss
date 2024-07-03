@@ -11,9 +11,19 @@ app-root {
 }
 
 main {
-  @apply h-full grow pt-12;
+  @apply flex flex-col h-full grow pt-12;
 }
 
 footer {
   @apply mt-auto;
+}
+
+@layer base {
+  h1 {
+    @apply font-extrabold text-xl;
+  }
+
+  input {
+    @apply outline-none;
+  }
 }

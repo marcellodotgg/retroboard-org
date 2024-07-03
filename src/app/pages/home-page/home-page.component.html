@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="card">
+    <section>
+      <h1>Create a Retroboard</h1>
+      <p class="text-gray-500 text-sm">
+        Create a Retroboard for free and without an account. Just enter the name
+        of the board. Then, share the link with your teammates.
+      </p>
+    </section>
+    <form [formGroup]="createBoardForm" (ngSubmit)="createBoard()">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center">
+          <input
+            formControlName="name"
+            type="text"
+            autocomplete="off"
+            placeholder="Name for your board"
+            maxlength="100"
+            autofocus
+          />
+          <input
+            type="submit"
+            value="Create Board"
+            [disabled]="createBoardForm.invalid || createBoardForm.disabled"
+          />
+        </div>
+      </div>
+    </form>
+    <div class="disclaimer">
+      By creating a board you accept our <a href="#">privacy policy</a> and
+      <a href="#">terms</a>.
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+:host {
+  @apply flex-grow h-0;
+
+  .container {
+    @apply flex flex-col items-start mt-4 sm:mt-0 sm:justify-center sm:items-center h-full;
+  }
+
+  .card {
+    @apply flex flex-col gap-4;
+    @apply w-full sm:max-w-[500px] border p-4 rounded-2xl shadow-sm;
+
+    .disclaimer {
+      @apply text-xs text-gray-500 text-center;
+
+      a {
+        @apply underline text-blue-700;
+      }
+    }
+  }
+
+  form {
+    input[type="text"] {
+      @apply flex-grow rounded-l-2xl border border-gray-400 py-1.5 px-3;
+      @apply border-r-0 transition-colors duration-200 focus:border-gray-500;
+    }
+
+    input[type="submit"] {
+      @apply font-bold text-white rounded-r-2xl border border-blue-900 bg-blue-900;
+      @apply px-3 py-1.5 shrink-0 cursor-pointer transition-colors duration-200;
+
+      &:focus,
+      &:hover {
+        @apply bg-blue-950;
+      }
+
+      &:focus {
+        @apply ring ring-blue-900/35;
+      }
+
+      &:disabled {
+        @apply bg-gray-200 cursor-not-allowed text-gray-500 border-gray-400;
+      }
+    }
+  }
+}
