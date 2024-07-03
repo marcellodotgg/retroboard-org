@@ -1,0 +1,8 @@
+footer {
+  @apply bg-gray-100 border-t text-gray-600 text-sm;
+
+  .container {
+    @apply flex flex-col sm:flex-row items-center sm:items-baseline justify-between;
+    @apply py-2 w-full;
+  }
+}

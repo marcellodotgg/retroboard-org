@@ -1,0 +1,19 @@
+:host {
+  @apply fixed top-0 w-full z-40 h-12;
+  @apply border-b;
+
+  .container {
+    @apply flex items-center h-full;
+  }
+
+  section:first-of-type {
+    h1 {
+      @apply text-xl font-extrabold;
+    }
+
+    a {
+      @apply px-3 py-1 rounded-2xl transition-colors duration-200 -ml-3;
+      @apply hover:bg-slate-200;
+    }
+  }
+}

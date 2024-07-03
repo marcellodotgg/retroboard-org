@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+app-root {
+  @apply m-0 p-0 min-h-screen flex flex-col;
+}
+
+main {
+  @apply h-full grow pt-12;
+}
+
+footer {
+  @apply mt-auto;
+}
