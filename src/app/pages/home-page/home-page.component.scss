@@ -24,8 +24,8 @@
       @apply border-r-0 transition-colors duration-200 focus:border-gray-500;
     }
 
-    input[type="submit"] {
-      @apply font-bold text-white rounded-r-2xl border border-blue-900 bg-blue-900;
+    button[type="submit"] {
+      @apply flex items-center gap-1 font-bold text-white rounded-r-2xl border border-blue-900 bg-blue-900;
       @apply px-3 py-1.5 shrink-0 cursor-pointer transition-colors duration-200;
 
       &:focus,

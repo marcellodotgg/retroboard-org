@@ -1,0 +1,8 @@
+<article class="container flex flex-col gap-2 w-full pt-2">
+  <h1 class="text-2xl">{{ board().name }}</h1>
+  <div class="flex gap-6 h-full overflow-auto w-full pb-4">
+    @for (column of board().columns; track column.id) {
+      <app-column [column]="column" />
+    }
+  </div>
+</article>

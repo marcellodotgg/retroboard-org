@@ -1,0 +1,7 @@
+<div class="h-full">
+  @defer (when !loading()) {
+    <app-board />
+  } @placeholder {
+    <app-spinner />
+  }
+</div>

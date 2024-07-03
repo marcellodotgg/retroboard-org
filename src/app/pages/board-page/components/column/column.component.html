@@ -1,0 +1,6 @@
+<h1>{{ column().name }}</h1>
+<div>
+  @for (feedback of column().feedback; track feedback.id) {
+    {{ feedback.description }}
+  }
+</div>

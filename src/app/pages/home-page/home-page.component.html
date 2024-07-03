@@ -18,11 +18,16 @@
             maxlength="100"
             autofocus
           />
-          <input
+          <button
             type="submit"
-            value="Create Board"
             [disabled]="createBoardForm.invalid || createBoardForm.disabled"
-          />
+          >
+            @if (creatingBoard()) {
+              <app-spinner />
+            } @else {
+              Create<span class="hidden sm:inline">Board</span>
+            }
+          </button>
         </div>
       </div>
     </form>
