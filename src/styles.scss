@@ -52,10 +52,6 @@ main {
   @apply flex flex-col h-full grow pt-12;
 }
 
-footer {
-  @apply mt-auto;
-}
-
 @layer base {
   h1 {
     @apply font-extrabold text-xl;
@@ -96,8 +92,8 @@ footer {
     }
 
     &[type="submit"] {
-      @apply bg-blue-900 text-white hover:bg-blue-950;
-      @apply disabled:bg-gray-200 disabled:text-gray-700 disabled:cursor-not-allowed;
+      @apply hover:bg-blue-100;
+      @apply disabled:text-gray-400 disabled:hover:bg-white disabled:cursor-not-allowed;
     }
   }
 }

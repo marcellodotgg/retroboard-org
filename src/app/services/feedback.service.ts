@@ -13,4 +13,16 @@ export class FeedbackService {
   create(columnId: string, description: string): Observable<Feedback> {
     return this.http.put<Feedback>(`${API_ROOT}/feedback`, { column_id: columnId, description });
   }
+
+  destroy(id: string): Observable<never> {
+    return this.http.delete<never>(`${API_ROOT}/feedback/${id}`);
+  }
+
+  voteFor(id: string): Observable<never> {
+    return this.http.post<never>(`${API_ROOT}/feedback/${id}/vote`, {});
+  }
+
+  unvoteFor(id: string): Observable<never> {
+    return this.http.post<never>(`${API_ROOT}/feedback/${id}/unvote`, {});
+  }
 }
