@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Router, RouterModule } from '@angular/router';
 import { finalize } from 'rxjs';
 import { SpinnerComponent } from '../../components/spinner/spinner.component';
@@ -26,9 +27,12 @@ export class HomePageComponent {
   }
 
   constructor(
+    private readonly title: Title,
     private readonly boardService: BoardService,
     private readonly router: Router,
-  ) {}
+  ) {
+    this.title.setTitle('Retroboard | Your Online Retroboard');
+  }
 
   createBoard(): void {
     this.creatingBoard.set(true);
