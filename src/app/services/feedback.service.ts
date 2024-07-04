@@ -14,6 +14,10 @@ export class FeedbackService {
     return this.http.put<Feedback>(`${API_ROOT}/feedback`, { column_id: columnId, description });
   }
 
+  update(feedback: Feedback): Observable<Feedback> {
+    return this.http.patch<Feedback>(`${API_ROOT}/feedback`, feedback);
+  }
+
   destroy(id: string): Observable<never> {
     return this.http.delete<never>(`${API_ROOT}/feedback/${id}`);
   }

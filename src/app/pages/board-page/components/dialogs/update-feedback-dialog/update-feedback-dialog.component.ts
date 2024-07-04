@@ -2,21 +2,21 @@ import { DialogRef } from '@angular/cdk/dialog';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
-import { Column } from '../../../../../models/column.model';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Feedback } from '../../../../../models/feedback.model';
 import { FeedbackService } from '../../../../../services/feedback.service';
 
 @Component({
-  selector: 'app-create-feedback-dialog',
+  selector: 'app-update-feedback-dialog',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatDialogModule],
-  templateUrl: './create-feedback-dialog.component.html',
-  styleUrl: './create-feedback-dialog.component.scss',
+  imports: [CommonModule, ReactiveFormsModule],
+  templateUrl: './update-feedback-dialog.component.html',
+  styleUrl: './update-feedback-dialog.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreateFeedbackDialogComponent {
+export class UpdateFeedbackDialogComponent {
   form = new FormGroup({
-    description: new FormControl('', [Validators.required]),
+    description: new FormControl(this.data.description, [Validators.required]),
   });
 
   private get description(): string {
@@ -24,13 +24,13 @@ export class CreateFeedbackDialogComponent {
   }
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Column,
+    @Inject(MAT_DIALOG_DATA) public data: Feedback,
     private readonly dialogRef: DialogRef,
     private readonly feedbackService: FeedbackService,
   ) {}
 
-  createFeedback(): void {
-    this.feedbackService.create(this.data.id, this.description).subscribe({
+  updateFeedback(): void {
+    this.feedbackService.update({ ...this.data, description: this.description }).subscribe({
       next: () => {
         this.dialogRef.close();
       },
