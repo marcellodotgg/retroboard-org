@@ -1,5 +1,5 @@
 :host {
-  @apply flex flex-col flex-grow;
+  @apply flex flex-col flex-grow bg-gray-50;
 
   .container {
     @apply flex flex-col items-start mt-4 sm:mt-0 sm:justify-center;
@@ -7,7 +7,7 @@
   }
 
   .card {
-    @apply flex flex-col gap-4;
+    @apply flex flex-col gap-4 bg-white;
     @apply w-full sm:max-w-[500px] border p-4 rounded-2xl shadow-sm;
 
     .disclaimer {
