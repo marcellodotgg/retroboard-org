@@ -5,4 +5,5 @@ export type Board = {
   name: string;
   columns?: Column[];
   updated_by: string;
+  viewers?: number;
 } & Audit;

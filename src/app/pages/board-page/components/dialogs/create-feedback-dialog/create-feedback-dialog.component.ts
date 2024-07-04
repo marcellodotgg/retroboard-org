@@ -5,6 +5,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { Column } from '../../../../../models/column.model';
 import { FeedbackService } from '../../../../../services/feedback.service';
+import { WebsocketService } from '../../../../../services/websocket.service';
 
 @Component({
   selector: 'app-create-feedback-dialog',
@@ -27,6 +28,7 @@ export class CreateFeedbackDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: Column,
     private readonly dialogRef: DialogRef,
     private readonly feedbackService: FeedbackService,
+    private readonly websocketService: WebsocketService,
   ) {}
 
   createFeedback(): void {

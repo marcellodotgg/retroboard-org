@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { PluralPipe } from '../../../../pipes/plural.pipe';
 import { BoardService } from '../../../../services/board.service';
 import { ColumnService } from '../../../../services/column.service';
 import { ColumnComponent } from '../column/column.component';
@@ -9,7 +11,7 @@ import { BoardSettingsDialogComponent } from '../dialogs/board-settings-dialog/b
 @Component({
   selector: 'app-board',
   standalone: true,
-  imports: [CommonModule, ColumnComponent],
+  imports: [CommonModule, ColumnComponent, MatTooltipModule, PluralPipe],
   templateUrl: './board.component.html',
   styleUrl: './board.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

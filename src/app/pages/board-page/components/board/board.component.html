@@ -1,6 +1,19 @@
 <article class="container flex flex-col gap-2 w-full pt-2">
-  <h1 class="text-xl">
-    {{ board().name }}
+  <header>
+    <div class="flex items-center gap-2">
+      <h1 class="flex items-center gap-1 text-xl">
+        {{ board().name }}
+      </h1>
+      <div
+        class="flex items-center gap-2 text-sm bg-green-100 px-2 py-1 rounded-2xl"
+        matTooltip="{{
+          board().viewers | plural: 'person' : 'people'
+        }} viewing this board"
+      >
+        <div class="h-3 w-3 bg-emerald-600 rounded-full"></div>
+        {{ board().viewers ?? 1 }}
+      </div>
+    </div>
     @if (isOwner()) {
       <button class="text-sm" (click)="openBoardSettings()">
         <svg
@@ -25,7 +38,7 @@
         </svg>
       </button>
     }
-  </h1>
+  </header>
   <div class="flex gap-6 h-full overflow-x-auto w-full pb-4">
     @for (column of board().columns; track column.id) {
       <app-column [column]="column" />
