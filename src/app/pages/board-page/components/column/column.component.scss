@@ -1,5 +1,5 @@
 :host {
-  @apply flex flex-col h-full w-[312px] shrink-0;
+  @apply flex flex-col h-full min-w-[312px] grow shrink-0;
   @apply border rounded-2xl shadow-sm bg-white;
 }
 

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { GITHUB_REPO } from '../../app.constants';
+import { APP_VERSION, GITHUB_REPO } from '../../app.constants';
 
 @Component({
   selector: 'app-footer',
@@ -12,4 +12,5 @@ import { GITHUB_REPO } from '../../app.constants';
 })
 export class FooterComponent {
   readonly githubRepoUrl = GITHUB_REPO;
+  readonly version = APP_VERSION;
 }

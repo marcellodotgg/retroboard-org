@@ -24,10 +24,6 @@ export class BoardComponent {
     private readonly columnService: ColumnService,
   ) {}
 
-  addNewColumn(): void {
-    this.columnService.create().subscribe();
-  }
-
   isOwner(): boolean {
     return this.boardService.isOwner();
   }
