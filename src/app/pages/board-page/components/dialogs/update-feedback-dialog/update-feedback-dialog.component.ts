@@ -2,14 +2,14 @@ import { DialogRef } from '@angular/cdk/dialog';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { Feedback } from '../../../../../models/feedback.model';
 import { FeedbackService } from '../../../../../services/feedback.service';
 
 @Component({
   selector: 'app-update-feedback-dialog',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MatDialogModule],
   templateUrl: './update-feedback-dialog.component.html',
   styleUrl: './update-feedback-dialog.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
