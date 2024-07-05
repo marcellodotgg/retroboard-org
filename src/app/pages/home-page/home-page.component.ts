@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject, PLATFORM_ID, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { Router, RouterModule } from '@angular/router';
@@ -18,6 +18,8 @@ import { BoardService } from '../../services/board.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent {
+  private readonly platformId = inject(PLATFORM_ID);
+
   createBoardForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]),
   });
@@ -40,9 +42,11 @@ export class HomePageComponent {
   ) {
     this.title.setTitle('Retroboard | Your Online Retroboard');
 
-    this.boardService.getMyBoards().subscribe((boards) => {
-      this.boards.set(boards);
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      this.boardService.getMyBoards().subscribe((boards) => {
+        this.boards.set(boards);
+      });
+    }
   }
 
   createBoard(): void {
