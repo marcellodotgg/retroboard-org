@@ -25,7 +25,7 @@
   </button>
 </section>
 <div class="flex flex-col gap-3 p-3 h-full overflow-y-auto">
-  @for (feedback of column().feedback; track feedback.id) {
+  @for (feedback of sortedColumn().feedback; track feedback.id) {
     <app-feedback [feedback]="feedback" />
   }
 </div>

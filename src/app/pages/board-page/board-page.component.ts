@@ -30,8 +30,8 @@ export class BoardPageComponent implements OnInit, OnDestroy {
     this.activatedRoute.paramMap.pipe(switchMap((params) => this.boardService.get(params.get('id') ?? ''))).subscribe({
       next: (board) => {
         this.boardService.board.set(board);
-        this.websocketService.connect(board.id);
         this.title.setTitle(`Retroboard | ${board.name}`);
+        this.websocketService.connect(board.id);
       },
       error: console.error,
     });
