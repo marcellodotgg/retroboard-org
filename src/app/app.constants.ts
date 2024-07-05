@@ -6,6 +6,10 @@ export const API_ROOT = isDevMode() ? 'http://localhost:8080' : 'https://retro.b
 export const API_WEBSOCKET_URL = isDevMode() ? 'ws://localhost:8080/ws' : 'wss://retro.bytebury.com/ws';
 export const APP_VERSION = packageInfo.version;
 
+export enum MaxLength {
+  FeedbackDescription = 400,
+}
+
 export const DEFAULT_BOARD_CONFIG = {
   name: 'My Retro',
   columns: [{ name: 'What Went Well' }, { name: "What Didn't Go Well" }, { name: 'Action Items' }],

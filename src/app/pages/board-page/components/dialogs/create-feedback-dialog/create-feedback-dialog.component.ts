@@ -3,23 +3,27 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { MaxLength } from '../../../../../app.constants';
 import { Column } from '../../../../../models/column.model';
+import { PluralPipe } from '../../../../../pipes/plural.pipe';
 import { FeedbackService } from '../../../../../services/feedback.service';
 
 @Component({
   selector: 'app-create-feedback-dialog',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatDialogModule],
   templateUrl: './create-feedback-dialog.component.html',
   styleUrl: './create-feedback-dialog.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, ReactiveFormsModule, MatDialogModule, PluralPipe],
 })
 export class CreateFeedbackDialogComponent {
+  readonly MaxLength = MaxLength;
+
   form = new FormGroup({
-    description: new FormControl('', [Validators.required]),
+    description: new FormControl('', [Validators.required, Validators.maxLength(MaxLength.FeedbackDescription)]),
   });
 
-  private get description(): string {
+  get description(): string {
     return this.form.get('description')?.value ?? '';
   }
 

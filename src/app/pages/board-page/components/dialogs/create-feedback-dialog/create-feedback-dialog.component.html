@@ -5,11 +5,19 @@
     to view this.
   </div>
 </section>
-<form [formGroup]="form">
+<form [formGroup]="form" class="text-right">
   <textarea
     formControlName="description"
     placeholder="Start typing your feedback..."
+    [maxlength]="MaxLength.FeedbackDescription"
   ></textarea>
+  <span class="text-sm text-gray-500">
+    {{
+      MaxLength.FeedbackDescription - description.length
+        | plural: "character" : "characters"
+    }}
+    remaining
+  </span>
 </form>
 <section class="flex justify-start flex-row-reverse gap-2">
   <button
