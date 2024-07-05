@@ -14,7 +14,7 @@
 <section class="flex justify-start flex-row-reverse gap-2">
   <button
     type="submit"
-    [disabled]="form.invalid || form.disabled"
+    [disabled]="form.invalid || form.disabled || form.pristine"
     (click)="updateFeedback()"
   >
     Update
