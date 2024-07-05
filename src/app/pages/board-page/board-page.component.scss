@@ -1,3 +1,7 @@
 :host {
-  @apply flex flex-col h-full grow bg-gray-50;
+  @apply flex flex-col flex-1 grow bg-gray-50;
+}
+
+app-board {
+  @apply h-0;
 }

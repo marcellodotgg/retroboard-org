@@ -72,7 +72,9 @@
       }
     </div>
   </header>
-  <div class="flex gap-6 h-full overflow-x-auto w-full pb-4">
+  <div
+    class="grid grid-flow-col auto-cols-min lg:auto-cols-fr gap-6 flex-1 overflow-x-auto w-full pb-4"
+  >
     @for (column of board().columns; track column.id) {
       <app-column [sorted]="sortByVotes" [column]="column" />
     }
