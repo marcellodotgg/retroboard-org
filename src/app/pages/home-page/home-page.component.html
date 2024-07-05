@@ -8,27 +8,26 @@
       </p>
     </section>
     <form [formGroup]="createBoardForm" (ngSubmit)="createBoard()">
-      <div class="flex flex-col gap-4">
-        <div class="flex items-center">
-          <input
-            formControlName="name"
-            type="text"
-            autocomplete="off"
-            placeholder="Name for your board"
-            maxlength="100"
-            autofocus
-          />
-          <button
-            type="submit"
-            [disabled]="createBoardForm.invalid || createBoardForm.disabled"
-          >
-            @if (creatingBoard()) {
-              <app-spinner />
-            } @else {
-              Create Board
-            }
-          </button>
-        </div>
+      <div class="flex items-stretch grow gap-2">
+        <input
+          formControlName="name"
+          type="text"
+          autocomplete="off"
+          placeholder="Name for your board"
+          maxlength="100"
+          autofocus
+        />
+        <button
+          class="primary shrink-0"
+          type="submit"
+          [disabled]="createBoardForm.invalid || createBoardForm.disabled"
+        >
+          @if (creatingBoard()) {
+            <app-spinner />
+          } @else {
+            Create Board
+          }
+        </button>
       </div>
     </form>
     <div class="disclaimer">
