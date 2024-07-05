@@ -1,7 +1,11 @@
 {{ feedback().description }}
 <footer>
   <div>
-    <button [ngClass]="{ voted: alreadyVoted() }" (click)="toggleVote()">
+    <button
+      [ngClass]="{ voted: alreadyVoted() }"
+      (click)="toggleVote()"
+      matTooltip="{{ alreadyVoted() ? 'Remove vote' : 'Vote' }}"
+    >
       @if (alreadyVoted()) {
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +43,7 @@
   </div>
   @if (isOwner()) {
     <div id="Feedback_Control_Panel">
-      <button (click)="openUpdateFeedbackDialog()">
+      <button (click)="openUpdateFeedbackDialog()" matTooltip="Edit feedback">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -55,7 +59,7 @@
           />
         </svg>
       </button>
-      <button class="danger" (click)="destroy()">
+      <button class="danger" (click)="destroy()" matTooltip="Delete feedback">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

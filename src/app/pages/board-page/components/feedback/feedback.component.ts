@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { Feedback } from '../../../../models/feedback.model';
 import { AuditService } from '../../../../services/audit.service';
 import { BoardService } from '../../../../services/board.service';
@@ -10,7 +11,7 @@ import { UpdateFeedbackDialogComponent } from '../dialogs/update-feedback-dialog
 @Component({
   selector: 'app-feedback',
   standalone: true,
-  imports: [CommonModule, MatDialogModule],
+  imports: [CommonModule, MatDialogModule, MatTooltipModule],
   templateUrl: './feedback.component.html',
   styleUrl: './feedback.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
