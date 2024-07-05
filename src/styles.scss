@@ -94,6 +94,48 @@ main {
   }
 }
 
+p-autocomplete {
+  @apply block max-w-full;
+
+  &:has(.p-autocomplete-panel) {
+    input.p-autocomplete-input {
+      @apply focus:rounded-b-none;
+    }
+  }
+
+  .p-autocomplete {
+    @apply block;
+  }
+
+  .p-overlay {
+    @apply bg-white;
+    @apply border border-blue-700 rounded-b-2xl border-t-0;
+  }
+
+  .p-autocomplete-panel {
+    .p-focus {
+      @apply bg-gray-200;
+    }
+
+    .p-autocomplete-empty-message,
+    .p-autocomplete-item {
+      @apply p-2 px-3 hover:bg-gray-100 max-w-full whitespace-normal;
+    }
+
+    .p-autocomplete-empty-message {
+      @apply text-gray-500 hover:bg-white focus:bg-white;
+    }
+
+    &:last-of-type {
+      @apply rounded-b-2xl;
+    }
+  }
+
+  .p-hidden-accessible {
+    @apply hidden;
+  }
+}
+
 .mat-mdc-dialog-container {
   @apply w-full md:w-[500px];
 }

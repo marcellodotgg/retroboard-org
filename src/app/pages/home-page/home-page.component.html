@@ -1,19 +1,19 @@
 <div class="container">
-  <div class="card">
-    <section>
+  <section class="card">
+    <div>
       <h1>Create a Retroboard</h1>
       <p class="text-gray-500 text-sm">
         Create a Retroboard for free and without an account. Just enter the name
         of the board. Then, share the link with your teammates.
       </p>
-    </section>
+    </div>
     <form [formGroup]="createBoardForm" (ngSubmit)="createBoard()">
       <div class="flex items-stretch grow gap-2">
         <input
           formControlName="name"
           type="text"
           autocomplete="off"
-          placeholder="Name for your board"
+          placeholder="Name of your board"
           maxlength="100"
           autofocus
         />
@@ -34,5 +34,29 @@
       By creating a board you accept our <a href="#">privacy policy</a> and
       <a href="#">terms</a>.
     </div>
-  </div>
+  </section>
+  <section class="card">
+    <div>
+      <h2>Previous Boards</h2>
+      <p class="text-gray-500 text-sm">
+        Pick up where you left off by searching for a previously accessed board.
+      </p>
+    </div>
+    <form [formGroup]="previousBoardsForm">
+      <p-autoComplete
+        formControlName="name"
+        field="name"
+        [suggestions]="filteredBoards()"
+        (completeMethod)="filterBoards($event)"
+        (onSelect)="goToBoard($event)"
+        [completeOnFocus]="true"
+        showTransitionOptions="0s"
+        hideTransitionOptions="0s"
+        [virtualScroll]="true"
+        [forceSelection]="true"
+        scrollHeight="118px"
+        placeholder="Search for a previous board..."
+      />
+    </form>
+  </section>
 </div>

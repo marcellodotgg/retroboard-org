@@ -3,7 +3,7 @@
 
   .container {
     @apply flex flex-col items-start mt-4 sm:mt-0 sm:justify-center;
-    @apply sm:items-center flex-grow;
+    @apply sm:items-center flex-grow gap-4;
   }
 
   .card {
