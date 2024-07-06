@@ -8,6 +8,7 @@ export const APP_VERSION = packageInfo.version;
 
 export enum MaxLength {
   FeedbackDescription = 400,
+  CommentDescription = 255,
 }
 
 export const DEFAULT_BOARD_CONFIG = {

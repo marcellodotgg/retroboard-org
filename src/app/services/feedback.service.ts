@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { API_ROOT } from '../app.constants';
+import { Comment } from '../models/comment.model';
 import { Feedback } from '../models/feedback.model';
 
 @Injectable({
@@ -28,5 +29,17 @@ export class FeedbackService {
 
   unvoteFor(id: string): Observable<never> {
     return this.http.post<never>(`${API_ROOT}/feedback/${id}/unvote`, {});
+  }
+
+  addComment(id: string, description: string): Observable<never> {
+    return this.http.put<never>(`${API_ROOT}/comments`, { feedback_id: id, description });
+  }
+
+  updateComment(comment: Comment): Observable<never> {
+    return this.http.patch<never>(`${API_ROOT}/comments`, comment);
+  }
+
+  destroyComment(id: string): Observable<never> {
+    return this.http.delete<never>(`${API_ROOT}/comments/${id}`);
   }
 }
