@@ -1,5 +1,7 @@
 @defer (when !loading()) {
   <app-board />
 } @placeholder {
-  <app-spinner />
+  <div class="flex grow items-center justify-center">
+    <app-spinner size="size-12" />
+  </div>
 }
