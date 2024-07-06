@@ -1,4 +1,3 @@
-import { isPlatformServer } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { API_WEBSOCKET_URL } from '../app.constants';
@@ -15,8 +14,6 @@ export class WebsocketService {
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
   connect(boardId: string): void {
-    if (isPlatformServer(this.platformId)) return;
-
     this.ws = new WebSocket(`${API_WEBSOCKET_URL}/${boardId}`);
 
     this.ws.onopen = (event) => {

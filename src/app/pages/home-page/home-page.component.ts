@@ -1,4 +1,4 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, PLATFORM_ID, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
@@ -42,11 +42,9 @@ export class HomePageComponent {
   ) {
     this.title.setTitle('Retroboard | Your Online Retroboard');
 
-    if (isPlatformBrowser(this.platformId)) {
-      this.boardService.getMyBoards().subscribe((boards) => {
-        this.boards.set(boards);
-      });
-    }
+    this.boardService.getMyBoards().subscribe((boards) => {
+      this.boards.set(boards);
+    });
   }
 
   createBoard(): void {
