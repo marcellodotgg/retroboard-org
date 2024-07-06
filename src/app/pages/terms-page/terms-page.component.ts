@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -10,4 +11,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './terms-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TermsPageComponent {}
+export class TermsPageComponent {
+  constructor(private readonly title: Title) {
+    this.title.setTitle('Retroboard | Terms of Service');
+  }
+}
