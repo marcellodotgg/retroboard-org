@@ -1,1 +1,1 @@
-/boards/
+/boards/1
