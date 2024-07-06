@@ -12,6 +12,7 @@
     }
 
     a {
+      @apply flex items-center gap-2;
       @apply px-3 py-1 rounded-2xl transition-colors duration-200 -ml-3;
       @apply hover:bg-blue-100;
     }
