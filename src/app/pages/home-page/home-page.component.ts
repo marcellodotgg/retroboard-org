@@ -7,6 +7,7 @@ import { AutoCompleteCompleteEvent, AutoCompleteModule, AutoCompleteSelectEvent 
 import { finalize } from 'rxjs';
 import { SpinnerComponent } from '../../components/spinner/spinner.component';
 import { Board } from '../../models/board.model';
+import { AnalyticsService } from '../../services/analytics.service';
 import { BoardService } from '../../services/board.service';
 
 @Component({
@@ -37,6 +38,7 @@ export class HomePageComponent {
 
   constructor(
     private readonly title: Title,
+    private readonly analytics: AnalyticsService,
     private readonly boardService: BoardService,
     private readonly router: Router,
   ) {
@@ -55,6 +57,7 @@ export class HomePageComponent {
       .pipe(finalize(() => this.creatingBoard.set(false)))
       .subscribe({
         next: (board) => {
+          this.analytics.boardCreated(board);
           this.boardService.board.set(board);
           this.router.navigate(['boards', board.id]);
         },
