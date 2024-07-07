@@ -12,7 +12,6 @@ import { BoardService } from '../../../../../services/board.service';
   standalone: true,
   imports: [CommonModule, RouterModule, ReactiveFormsModule, MatDialogModule],
   templateUrl: './board-settings-dialog.component.html',
-  styleUrl: './board-settings-dialog.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BoardSettingsDialogComponent {

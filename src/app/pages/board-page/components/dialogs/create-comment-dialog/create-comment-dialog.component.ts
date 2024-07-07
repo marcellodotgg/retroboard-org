@@ -13,7 +13,6 @@ import { FeedbackService } from '../../../../../services/feedback.service';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, MatDialogModule, PluralPipe],
   templateUrl: './create-comment-dialog.component.html',
-  styleUrl: './create-comment-dialog.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateCommentDialogComponent {

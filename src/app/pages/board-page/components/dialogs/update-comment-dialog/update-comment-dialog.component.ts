@@ -12,7 +12,6 @@ import { FeedbackService } from '../../../../../services/feedback.service';
   selector: 'app-update-comment-dialog',
   standalone: true,
   templateUrl: './update-comment-dialog.component.html',
-  styleUrl: './update-comment-dialog.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, ReactiveFormsModule, MatDialogModule, PluralPipe],
 })
