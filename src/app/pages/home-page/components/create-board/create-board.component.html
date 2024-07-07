@@ -1,0 +1,33 @@
+<header>
+  <h1>Create a Retroboard</h1>
+  <p class="subtitle">
+    Create a Retroboard for free and without an account. Just enter the name of
+    the board. Then, share the link with your teammates.
+  </p>
+</header>
+<form [formGroup]="form" (ngSubmit)="createBoard()">
+  <input
+    formControlName="name"
+    type="text"
+    autocomplete="off"
+    placeholder="Name of your board"
+    maxlength="100"
+    autofocus
+  />
+  <button
+    class="primary"
+    type="submit"
+    [disabled]="form.invalid || form.disabled"
+  >
+    @if (creatingBoard()) {
+      <app-spinner />
+    } @else {
+      Create Board
+    }
+  </button>
+</form>
+<footer class="disclaimer">
+  By creating a board you accept our
+  <a routerLink="privacy">privacy policy</a> and
+  <a routerLink="terms">terms</a>.
+</footer>

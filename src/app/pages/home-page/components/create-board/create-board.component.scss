@@ -1,0 +1,28 @@
+:host {
+  @apply flex flex-col gap-4;
+}
+
+header {
+  h1 {
+    @apply text-2xl;
+  }
+  p {
+    @apply text-gray-500 text-sm;
+  }
+}
+
+form {
+  @apply flex items-stretch grow gap-2;
+
+  button[type="submit"] {
+    @apply shrink-0;
+  }
+}
+
+footer {
+  @apply text-xs text-gray-500 text-center;
+
+  a {
+    @apply underline text-blue-700;
+  }
+}

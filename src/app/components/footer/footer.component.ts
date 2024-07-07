@@ -11,6 +11,6 @@ import { APP_VERSION, GITHUB_REPO } from '../../app.constants';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
-  readonly githubRepoUrl = GITHUB_REPO;
-  readonly version = APP_VERSION;
+  readonly GITHUB_REPO_URL = GITHUB_REPO;
+  readonly VERSION = APP_VERSION;
 }

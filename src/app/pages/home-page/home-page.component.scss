@@ -7,19 +7,6 @@
   }
 
   .card {
-    @apply flex flex-col gap-4 bg-white;
-    @apply w-full sm:max-w-[500px] border p-4 rounded-2xl shadow-sm;
-
-    h1 {
-      @apply text-2xl;
-    }
-
-    .disclaimer {
-      @apply text-xs text-gray-500 text-center;
-
-      a {
-        @apply underline text-blue-700;
-      }
-    }
+    @apply bg-white w-full sm:max-w-[500px] border p-4 rounded-2xl shadow-sm;
   }
 }

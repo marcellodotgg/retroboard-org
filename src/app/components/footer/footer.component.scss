@@ -8,5 +8,17 @@ footer {
   .container {
     @apply flex flex-col sm:flex-row items-center sm:items-baseline justify-between;
     @apply py-2 w-full;
+
+    & div:last-of-type span {
+      @apply text-red-400;
+    }
+  }
+
+  .information {
+    @apply flex gap-1 items-center;
+  }
+
+  .version {
+    @apply cursor-default bg-gray-200 text-xs font-mono px-2 py-0.5 rounded-2xl hover:bg-blue-100;
   }
 }

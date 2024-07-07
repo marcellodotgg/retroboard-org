@@ -1,14 +1,10 @@
 <footer>
   <div class="container">
-    <div id="copyright">&copy; Bytebury LLC. All Rights Reserved.</div>
-    <div class="flex gap-1 items-center">
-      Developed with <span class="text-red-400">&hearts;</span> on
-      <a class="underline" [href]="githubRepoUrl" target="_blank"> GitHub </a>
-      <div
-        class="bg-gray-200 text-xs font-mono px-2 py-0.5 rounded-2xl hover:bg-blue-100"
-      >
-        v{{ version }}
-      </div>
+    <div id="Footer_Copyright">&copy; Bytebury LLC. All Rights Reserved.</div>
+    <div id="Footer_Information" class="information">
+      Developed with <span>&hearts;</span> on
+      <a class="underline" [href]="GITHUB_REPO_URL" target="_blank"> GitHub </a>
+      <div class="version">v{{ VERSION }}</div>
     </div>
   </div>
 </footer>

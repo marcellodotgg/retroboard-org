@@ -5,6 +5,10 @@ import { Observable, tap } from 'rxjs';
 import { BoardService } from '../services/board.service';
 import { WebsocketService } from '../services/websocket.service';
 
+/**
+ * Tells the service that a change occurred to the board and to broadcast
+ * to all users within that board.
+ */
 export function boardActivityInterceptor(
   request: HttpRequest<unknown>,
   next: HttpHandlerFn,

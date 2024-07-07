@@ -1,5 +1,13 @@
-:host {
-  display: block;
+article {
+  @apply flex flex-col gap-2 container py-4;
+}
+
+span.effective-date {
+  @apply text-gray-600 text-sm;
+}
+
+ul {
+  @apply list-disc ml-8;
 }
 
 a {

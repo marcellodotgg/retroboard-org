@@ -1,0 +1,19 @@
+<header>
+  <h2>Previous Boards</h2>
+  <p class="subtitle">Search for a board that you previously created.</p>
+</header>
+<form [formGroup]="form">
+  <p-autoComplete
+    formControlName="name"
+    field="name"
+    [suggestions]="filteredBoards()"
+    (completeMethod)="filterBoards($event)"
+    (onSelect)="goToBoard($event)"
+    [completeOnFocus]="true"
+    showTransitionOptions="0s"
+    hideTransitionOptions="0s"
+    [forceSelection]="true"
+    scrollHeight="118px"
+    placeholder="Search for a previous board..."
+  />
+</form>

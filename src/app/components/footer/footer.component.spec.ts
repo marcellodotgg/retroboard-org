@@ -14,6 +14,6 @@ describe('FooterComponent', () => {
   });
 
   it('should return the the github repository url', () => {
-    expect(component.githubRepoUrl).toBe(GITHUB_REPO);
+    expect(component.GITHUB_REPO_URL).toBe(GITHUB_REPO);
   });
 });
