@@ -1,5 +1,10 @@
 # <img src="https://raw.githubusercontent.com/bytebury/retroboard-org/dfe18d872bc710f0a3b4b1c1656e7e17823fc6d5/public/logo.svg" height="24" width="24" alt="logo"> Retroboard.org
 
+An application that allows you to run feedback loops for yourself or with your organization. A retrospective, or
+"retro", activity is when an individual or a team comes together and discusses what went well,
+what didn't go well, and what actionable things we can do to improve. It's an important practice to
+do in order to foster continuous improvement ideas.
+
 The official code behind the https://retroboard.org website. Opened-source for educational purposes. If you, or your company would like to run an on-premises version of Retroboard.org, then please reach out to hey@bytebury.com for licensing agreements.
 
 ## About
@@ -10,18 +15,23 @@ Retroboard.org is different. You don't need an account to create a Retroboard, j
 
 Retroboard.org is also anonymous. There's no sign-in, so you can feel safe by saying things the team might need to hear &mdash; but keep it professional.
 
-## Contributing
+The application is simple by design with only a few core parts of our domain:
 
-If you are interested in contributing to this project, here's how to run it locally:
+## Board
 
-1. Install Node.js or equivalent locally
-2. Clone this repository
-3. Install dependencies:
+Contains all of the columns for our retrospective as well as all the feedback within those columns.
 
-```shell
-cd retroboard-org
-npm i
-```
+## Columns
 
-4. Start the application `npm start`
-5. Go to `http://localhost:4200` in your browser and you should see the application up and running!
+Contains feedback, but they are a grouping of the "kinds" of feedback. For example: What went well,
+What didn't go well, Action items.
+
+## Feedback
+
+This contains the feedback from a user, whether it be praise, or something that should be called out.
+
+# 🧠 Core Values
+
+- Keep it simple &mdash; we're an opinionated board, what you see is what you get. No decision fatigue with deciding on colors, column names, etc. Just name your board and get to work.
+- Respect each individual's feedback, keep the retroboard a safe place to be listened and heard. Avoid "the blame game" or calling individuals out by name.
+- Anonymous &mdash; we have anonmousity built into the application by default. People can share their thoughts candidly; don't ask who wrote what. That isn't the point.
